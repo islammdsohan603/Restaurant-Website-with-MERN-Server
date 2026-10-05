@@ -17,10 +17,10 @@ export const signupSchema = z
 
     phone: z
       .string()
-      .min(10, "Phone number must be at least 10 digits")
-      .max(15, "Phone number must be 15 digits or fewer")
-      .regex(/^[0-9+\-\s()]+$/, "Phone number can only contain digits, +, -, spaces, and parentheses")
-      .trim(),
+      .trim()
+      .regex(/^\d+$/, "Phone number can only contain numbers")
+      .min(8, "Phone number must be a minimum of 8 digits")
+      .max(11, "Phone number must be a maximum of 11 digits"),
 
     address: z
       .string()
@@ -74,10 +74,10 @@ export const updateProfileSchema = z
 
     phone: z
       .string()
-      .min(10, "Phone number must be at least 10 digits")
-      .max(15, "Phone number must be 15 digits or fewer")
-      .regex(/^[0-9+\-\s()]+$/, "Phone number can only contain digits, +, -, spaces, and parentheses")
       .trim()
+      .regex(/^\d+$/, "Phone number can only contain numbers")
+      .min(8, "Phone number must be a minimum of 8 digits")
+      .max(11, "Phone number must be a maximum of 11 digits")
       .optional(),
 
     address: z

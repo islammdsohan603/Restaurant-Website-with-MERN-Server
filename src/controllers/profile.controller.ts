@@ -107,7 +107,7 @@ export const updateProfileController = async (
     const updatedUser = await User.findByIdAndUpdate(
       req.userId,
       { $set: updates },
-      { new: true, runValidators: true }
+      { returnDocument: "after", runValidators: true }
     ).select("-password");
 
     if (!updatedUser) {
