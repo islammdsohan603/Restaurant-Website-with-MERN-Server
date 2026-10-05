@@ -29,6 +29,7 @@ const UserSchema = new Schema<IUser>(
       type: String,
       required: [true, "Phone number is required"],
       trim: true,
+      match: [/^\d{8,11}$/, "Phone number must be between 8 and 11 digits (numbers only)"],
     },
     address: {
       type: String,
