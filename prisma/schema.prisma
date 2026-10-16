@@ -12,22 +12,20 @@ datasource db {
   provider = "postgresql"
 }
 
-model User{
-   id Int @id @default(autoincrement())
-   name String
-   username String @unique 
-   email String @unique
-   password String
-   roll UserRoll @default(User)
-   avatar String?
-   @@map("users")
+model User {
+  id       Int      @id @default(autoincrement())
+  name     String
+  username String   @unique
+  email    String   @unique
+  password String
+  roll     UserRoll @default(User)
+  avatar   String?
 
+  @@map("users")
 }
-
 
 enum UserRoll {
   User
   Admin
   Manager
 }
-
