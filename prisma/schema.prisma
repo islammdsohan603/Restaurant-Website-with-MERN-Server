@@ -11,3 +11,41 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model User {
+  id       String   @id @default(uuid())
+  name     String
+  username String   @unique
+  email    String   @unique
+  password String
+  roll     UserRoll @default(User)
+
+  orders Order[]
+
+  @@map("users")
+}
+
+enum UserRoll {
+  User
+  Admin
+  Manager
+}
+
+model Product {
+  id          String  @id @default(uuid())
+  title       String
+  description String?
+  price       Int
+  stock       Int
+
+  @@map("products")
+}
+
+model Order {
+  id     String @id @default(uuid())
+  userId String
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("orders")
+}
