@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // route
-app.use("/", productRouter);
+app.use("", productRouter);
 
 app.get("/", (req, res) => {
   res.json({

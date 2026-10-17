@@ -1,4 +1,5 @@
 import prisma from "../lib/prisma.js";
+// post products
 export const postPorducts = async (req, res) => {
     try {
         const productData = req.body;
@@ -15,6 +16,24 @@ export const postPorducts = async (req, res) => {
         return res.status(500).json({
             success: false,
             message: `Products Post Error in Server ${error}`,
+        });
+    }
+};
+// get products
+export const getProducts = async (req, res) => {
+    try {
+        const getProdcutsData = req.body;
+        const data = await prisma.product.findMany();
+        return res.status(200).json({
+            success: true,
+            message: "Products Fetched Successfully",
+            data,
+        });
+    }
+    catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: `Prodcuts get is Error in ${error}`,
         });
     }
 };
