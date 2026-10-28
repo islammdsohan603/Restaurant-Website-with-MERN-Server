@@ -1,15 +1,15 @@
 import express from "express";
 import cors from "cors";
-import productRouter from "./routes/product.routes.js";
+import userRoutes from "./routers/user.routes.js";
 const app = express();
 app.use(cors());
 app.use(express.json());
-// route
-app.use("", productRouter);
-app.get("/", (req, res) => {
-    res.json({
+app.get("/", (_req, res) => {
+    res.status(200).json({
         success: true,
-        message: "Restaurant API is running",
+        message: "Restaurant Backend Server is Running!",
     });
 });
+// User Routes
+app.use("/api/users", userRoutes);
 export default app;

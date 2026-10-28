@@ -51,9 +51,7 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  User: 'User',
-  Product: 'Product',
-  Order: 'Order'
+  User: 'User'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -74,34 +72,17 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 
 export const UserScalarFieldEnum = {
   id: 'id',
-  name: 'name',
-  username: 'username',
+  fname: 'fname',
+  lname: 'lname',
   email: 'email',
   password: 'password',
-  roll: 'roll'
+  phone: 'phone',
+  role: 'role',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
-
-
-export const ProductScalarFieldEnum = {
-  id: 'id',
-  title: 'title',
-  description: 'description',
-  price: 'price',
-  stock: 'stock'
-} as const
-
-export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
-
-
-export const OrderScalarFieldEnum = {
-  id: 'id',
-  userId: 'userId',
-  quantity: 'quantity'
-} as const
-
-export type OrderScalarFieldEnum = (typeof OrderScalarFieldEnum)[keyof typeof OrderScalarFieldEnum]
 
 
 export const SortOrder = {

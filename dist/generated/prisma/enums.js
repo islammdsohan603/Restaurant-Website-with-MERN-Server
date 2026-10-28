@@ -7,8 +7,7 @@
 *
 * 🟢 You can import this file directly.
 */
-export const UserRoll = {
-    User: 'User',
-    Admin: 'Admin',
-    Manager: 'Manager'
+export const UserRole = {
+    USER: 'USER',
+    ADMIN: 'ADMIN'
 };

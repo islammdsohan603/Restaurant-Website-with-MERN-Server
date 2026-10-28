@@ -14,6 +14,7 @@
  * model files in the `model` directory!
  */
 import * as runtime from "@prisma/client/runtime/client";
+import {} from "./class.js";
 /**
  * Prisma Errors
  */
@@ -36,12 +37,12 @@ export const Sql = runtime.Sql;
 export const Decimal = runtime.Decimal;
 export const getExtensionContext = runtime.Extensions.getExtensionContext;
 /**
- * Prisma Client JS version: 7.10.0
- * Query Engine version: 0edf323efd1d98336f3f0a68684b56f689b900d3
+ * Prisma Client JS version: 7.10.1
+ * Query Engine version: d1b3f377ca835d73fd50954a5e22128b9ebdd6b8
  */
 export const prismaVersion = {
-    client: "7.10.0",
-    engine: "0edf323efd1d98336f3f0a68684b56f689b900d3"
+    client: "7.10.1",
+    engine: "d1b3f377ca835d73fd50954a5e22128b9ebdd6b8"
 };
 export const NullTypes = {
     DbNull: runtime.NullTypes.DbNull,
@@ -67,9 +68,7 @@ export const JsonNull = runtime.JsonNull;
  */
 export const AnyNull = runtime.AnyNull;
 export const ModelName = {
-    User: 'User',
-    Product: 'Product',
-    Order: 'Order'
+    User: 'User'
 };
 /**
  * Enums
@@ -82,23 +81,14 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 });
 export const UserScalarFieldEnum = {
     id: 'id',
-    name: 'name',
-    username: 'username',
+    fname: 'fname',
+    lname: 'lname',
     email: 'email',
     password: 'password',
-    roll: 'roll'
-};
-export const ProductScalarFieldEnum = {
-    id: 'id',
-    title: 'title',
-    description: 'description',
-    price: 'price',
-    stock: 'stock'
-};
-export const OrderScalarFieldEnum = {
-    id: 'id',
-    userId: 'userId',
-    quantity: 'quantity'
+    phone: 'phone',
+    role: 'role',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
 };
 export const SortOrder = {
     asc: 'asc',
