@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 
 import { signupSchema } from "../schemas/user.schema.js";
 
-import { findUserByEmail, createUser } from "../models/User.model.js";
+import { findUserByEmail, createUser } from "../models/user.model.js";
 
 export const signupUser = async (
   req: Request,
