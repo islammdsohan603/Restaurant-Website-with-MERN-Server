@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 
+import userRoutes from "./routers/user.routes.js";
+
 const app = express();
 
 app.use(cors());
@@ -12,5 +14,9 @@ app.get("/", (_req, res) => {
     message: "Restaurant Backend Server is Running!",
   });
 });
+
+// User Routes
+
+app.use("/api/users", userRoutes);
 
 export default app;
