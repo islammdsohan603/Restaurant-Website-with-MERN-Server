@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Home Route
 app.get("/", (_req, res) => {
   res.status(200).json({
     success: true,
@@ -16,7 +17,6 @@ app.get("/", (_req, res) => {
 });
 
 // User Routes
-
 app.use("/api/users", userRoutes);
 
 export default app;
