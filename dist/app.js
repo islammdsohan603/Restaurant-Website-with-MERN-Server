@@ -4,6 +4,7 @@ import userRoutes from "./routers/user.routes.js";
 const app = express();
 app.use(cors());
 app.use(express.json());
+// Home Route
 app.get("/", (_req, res) => {
     res.status(200).json({
         success: true,
