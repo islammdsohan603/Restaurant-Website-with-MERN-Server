@@ -19,3 +19,21 @@ export const createUser = async (data) => {
         },
     });
 };
+// get all user data
+export const getAllUsers = async () => {
+    return await prisma.user.findMany({
+        select: {
+            id: true,
+            fname: true,
+            lname: true,
+            email: true,
+            phone: true,
+            role: true,
+            createdAt: true,
+            updatedAt: true,
+        },
+        orderBy: {
+            createdAt: "desc",
+        },
+    });
+};
